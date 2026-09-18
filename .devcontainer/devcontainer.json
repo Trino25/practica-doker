@@ -1,17 +1,24 @@
 {
-  "name": "Docker Practice Environment",
-  "image": "mcr.microsoft.com/devcontainers/base:jammy",
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "version": "latest"
-    }
-  },
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-azuretools.vscode-docker"
-      ]
-    }
-  },
-  "remoteUser": "vscode"
+    "name": "Docker Practice Environment",
+    "image": "mcr.microsoft.com/devcontainers/base:jammy",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "18"
+        },
+        "ghcr.io/devcontainers/features/aws-cli:1": {
+            "version": "latest"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    },
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y zip",
+    "remoteUser": "vscode"
 }
